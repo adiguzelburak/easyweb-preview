@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-paper: #f6f1e9;
+  --color-ink: #16130f;
+  --color-muted: #6b645b;
+  --color-orange: #ff6600;
+  --color-orange-deep: #b34700;
+  --color-comic: #ffd83d;
+  --color-alert: #ff3b30;
+  --color-green: #3ad35e;
+
+  --font-weight-heavy: 650;
+
+  --text-hero: clamp(3rem, 7.2vw, 7rem);
+  --text-hero--line-height: 0.95;
+  --text-hero--letter-spacing: -0.04em;
+  --text-hero--font-weight: 650;
+
+  --text-title: clamp(2.5rem, 5.4vw, 5rem);
+  --text-title--line-height: 0.98;
+  --text-title--letter-spacing: -0.035em;
+  --text-title--font-weight: 650;
+
+  --text-app: clamp(3rem, 6.2vw, 6rem);
+  --text-app--line-height: 0.92;
+  --text-app--letter-spacing: -0.04em;
+  --text-app--font-weight: 650;
+
+  --text-stat: clamp(4rem, 7.5vw, 7rem);
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.04em;
+  --text-stat--font-weight: 650;
+
+  --text-mega: clamp(3.5rem, 11vw, 11rem);
+  --text-mega--line-height: 0.9;
+  --text-mega--letter-spacing: -0.045em;
+  --text-mega--font-weight: 650;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-orbit: orbit 150s linear infinite;
+  --animate-sweep: orbit 5s linear infinite;
+  --animate-glow: glow 5s ease-in-out infinite;
+  --animate-drift: drift 2.6s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-eq: eq 1.1s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      transform: scale(0.85);
+      opacity: 0.35;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translateX(-12px);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(56px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes eq {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-cooper: var(--font-cooper-black), "Cooper Black", serif;
+}
+
+@custom-variant short (@media (max-height: 780px));
+
+/* On orange surfaces the surface itself is the easy® badge, so the pill drops its own fill and padding. */
+@utility on-orange {
+  --easy-fill: transparent;
+  --easy-pad: 0;
+}
+
+/* Ghosted text keeps the Cooper word but no pill. */
+@utility easy-plain {
+  --easy-fill: transparent;
+  --easy-pad: 0;
+  --easy-ink: currentColor;
+}
+
+/* Horizontal centre of the sticky showcase phone; keep in sync with lib/layout.ts. */
+@utility left-phone {
+  left: calc(50% + min(50%, 40rem) - 2rem - min(17svh, 170px));
+}
+
+@layer base {
+  :root {
+    --easy-fill: var(--color-orange);
+    --easy-pad: 0.28em;
+    --easy-ink: var(--color-white);
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-orange);
+    color: var(--color-ink);
+  }
+
+  :where(a, button, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-paper);
+  }
+}
+
+html:not([data-intro="play"]) [data-intro-overlay] {
+  display: none;
+}
+
+html[data-intro="play"] :is([data-intro-split], [data-intro-reveal], [data-intro-pop]) {
+  visibility: hidden;
+}
