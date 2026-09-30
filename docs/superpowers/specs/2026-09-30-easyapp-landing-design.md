@@ -155,8 +155,10 @@ app/
   layout.tsx            fonts, <html> attributes, intro head script, metadata, JSON-LD, GA4, SmoothScroll
   page.tsx              composes the sections in order; no logic
   globals.css           Tailwind import, @theme tokens, base styles, intro rules
-  opengraph-image.tsx   1200×630: orange field, Cooper Black "easyApp.io", tagline
-  icon.tsx              favicon: orange square, white Cooper Black "e"
+  opengraph-image.tsx   1200×630: orange field, white Cooper Black "easyApp.io", tagline with a superscript ®
+  icon.tsx              480×480 favicon (a multiple of 48px, as Google Search requires): rounded orange square, white Cooper Black "e"
+  apple-icon.tsx        180×180 square version for iOS home screens (iOS applies its own mask)
+  favicon.ico           48×48 static copy of the icon for clients that request /favicon.ico
   fonts/                cooper-black.woff2 (web), CooperBlack.ttf (image generation)
 components/
   layout/     Nav, MobileMenu, Footer, SmoothScroll, Analytics
@@ -170,7 +172,7 @@ components/
   ui/         EasyWord, EasyText, Button, Phone, StoreLinks, SectionHeading, SplitReveal,
               Reveal, Odometer, Marquee, MagneticButton, icons
 content/      types.ts, site.ts, apps.ts, team.ts
-lib/          gsap, motion, intro, scroll (hash links + Lenis gate), snap, layout, og, canvas, geometry, cn
+lib/          gsap, motion, intro, scroll (hash links + Lenis gate), snap, layout, og (fonts + shared brand icon), canvas, geometry, cn
   hooks/      useMediaQuery, useInViewport, useTicker, useCanvasScene, useCopyToClipboard,
               useScrollSteps, useElementSnapPoints
 public/apps/<appId>/icon.png, screen-*.png

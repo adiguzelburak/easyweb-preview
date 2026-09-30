@@ -1,32 +1,9 @@
-import { ImageResponse } from "next/og";
-import { company } from "@/content/site";
-import { cooperBlack } from "@/lib/og";
+import { brandIcon } from "@/lib/og";
 
-export const size = { width: 512, height: 512 };
+// Google Search only shows favicons whose size is a multiple of 48px.
+export const size = { width: 480, height: 480 };
 export const contentType = "image/png";
 
-export default async function Icon() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingBottom: 48,
-          borderRadius: 116,
-          background: "#ff6600",
-          color: "#f6f1e9",
-          fontFamily: "Cooper",
-          fontSize: 400,
-          lineHeight: 1,
-        }}
-      >
-        {company.name[0]}
-      </div>
-    ),
-    { ...size, fonts: [{ name: "Cooper", data: await cooperBlack, weight: 400, style: "normal" }] },
-  );
+export default function Icon() {
+  return brandIcon(size.width, { rounded: true });
 }

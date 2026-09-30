@@ -30,19 +30,23 @@ export default async function OpengraphImage() {
           fontFamily: "Bricolage",
         }}
       >
-        <div style={{ display: "flex", alignItems: "baseline", fontSize: 88, color: "#f6f1e9" }}>
+        <div style={{ display: "flex", alignItems: "baseline", fontSize: 88, color: "#ffffff" }}>
           <span style={{ fontFamily: "Cooper" }}>{brand}</span>
           <span>.{domain}</span>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", columnGap: 24, maxWidth: 1000, fontSize: 88, lineHeight: 1 }}>
-          {words.map((word, index) => (
-            <span
-              key={index}
-              style={word.startsWith("easy") ? { fontFamily: "Cooper", color: "#f6f1e9" } : { letterSpacing: "-0.03em" }}
-            >
-              {word}
-            </span>
-          ))}
+          {words.map((word, index) =>
+            word.startsWith("easy") ? (
+              <span key={index} style={{ display: "flex", fontFamily: "Cooper", color: "#ffffff" }}>
+                {word.replace("®", "")}
+                {word.includes("®") && <span style={{ marginTop: 4, marginLeft: 4, fontSize: 30 }}>®</span>}
+              </span>
+            ) : (
+              <span key={index} style={{ letterSpacing: "-0.03em" }}>
+                {word}
+              </span>
+            ),
+          )}
         </div>
       </div>
     ),
