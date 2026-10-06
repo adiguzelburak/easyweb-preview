@@ -30,12 +30,12 @@ Single route `/`, fully prerendered. `id` is the nav anchor.
 |---|---|---|---|---|
 | 0 | Intro | — | orange | Cooper Black "easy" → the orange layer shrinks into the phone screen. Once per browser session (`sessionStorage`). |
 | 1 | Hero | `top` | paper | Headline, one-line business model, 3 key metrics, CTAs "Contact us" (mailto) + "See the portfolio". Phone on the right showing a home screen with the 5 app icons. |
-| 2 | Portfolio | `portfolio` | per-app world | Short heading panel, then 6 app panels (easyStars, easyMusic, Comikaze, GlobeAlert, GLPal, CarUp); the same phone stays in place and opens each app. On desktop, scrolling moves one whole project at a time. |
+| 2 | Portfolio | `portfolio` | per-app world | Short heading panel, then 6 app panels (GlobeAlert, GLPal, Comikaze, easyStars, easyMusic, CarUp); the same phone stays in place and opens each app. On desktop, scrolling moves one whole project at a time. |
 | 3 | Playbook | `playbook` | paper | Growth curve with Launch → Grow → Monetize → Scale stops. |
 | 4 | Traction | `traction` | ink | 4 odometer metrics, each with a one-line context. |
 | 5 | easy® family | `family` | paper | Credibility statement + link to easy.com; optional brand strip. |
 | 6 | Team | `team` | paper | Leadership cards. **Built but hidden** (`site.showTeam = false`). |
-| 7 | Closing | `contact` | orange | "Let's make it easy." + email (copy / mailto) + LinkedIn. |
+| 7 | Closing | `contact` | orange | "Let's get in touch." + email (copy / mailto) + LinkedIn. |
 | 8 | Footer | — | ink | Logo, links, legal line. |
 
 Nav: logo · Portfolio · Playbook · Traction · Contact · "Contact us" button (mailto). Mobile: full-screen orange menu.
@@ -55,9 +55,9 @@ All copy lives in `content/`. Values marked † come from the current site and m
   - 10M+† Total downloads — "Across iOS and Android."
   - 25+† Apps published — "Shipped to the App Store and Google Play."
   - 50+† Markets served — "With localized store listings."†
-  - 6 Flagship apps — "easyStars, easyMusic, Comikaze, GlobeAlert, GLPal and CarUp."
+  - 6 Flagship apps — "GlobeAlert, GLPal, Comikaze, easyStars, easyMusic and CarUp."
 - **Family:** "Part of the **easy**® family of brands." + one sentence + link to easy.com.
-- **Closing:** "Let’s make it **easy**." / "For investment and partnership inquiries, write to us directly." Email `info@appricott.ai`† (the user may switch to an IR address).
+- **Closing:** "Let’s get in touch." Email `info@appricott.ai`† (the user may switch to an IR address).
 - **Footer:** "© 2026 easyApp.io — All rights reserved."† Legal entity name and address are added when provided.
 
 ## 3. Visual system
@@ -65,7 +65,7 @@ All copy lives in `content/`. Values marked † come from the current site and m
 ### Fonts
 
 - **Cooper Black** — `app/fonts/cooper-black.woff2` via `next/font/local`. Only for easy-branded words ("easy", "easyApp", "easyStars", "easyMusic"), and only through `<EasyWord>`. The `font-cooper` utility appears nowhere else. `<EasyText>` renders any copy string and wraps every word starting with "easy" (with a following ®) in `<EasyWord>`, so the rule holds without per-string markup.
-- **easy® pill:** every `<EasyWord>` is a badge — white Cooper Black on a fully rounded orange fill with 0.28em side padding, and a following ® sits inside it. The fill is a `::before` layer whose insets hug Cooper's glyphs (x-height, or cap height when the word has capitals, down to the descender, 0.13em to spare) instead of Cooper's tall line box, where lowercase "easy" sat low with 0.43em of empty orange above it. It is driven by `--easy-fill`, `--easy-pad` and `--easy-ink`: `on-orange` (Intro, mobile menu, home-screen icon grid, easyMusic's world, Closing) drops fill and padding because the orange surface already is the badge; `easy-plain` (the footer watermark) also lets the word take the surrounding color. The Family mark is the same pill at logo size, vertically centred with the copy.
+- **easy® pill:** every `<EasyWord>` is a badge — white Cooper Black on a fully rounded orange fill with 0.28em side padding. A domain suffix ("easyApp.io", "easy.com") and a following ® sit inside the same pill; the suffix keeps the sans font. The fill is a `::before` layer centred on the x-height (cap height when the word has capitals) with descenders dipping into its lower edge, so the pill sits on the line like a word. Hugging the whole glyph box including the "y" descender made pills hang below the line; Cooper's full line box left lowercase "easy" sitting low. It is driven by `--easy-fill`, `--easy-pad` and `--easy-ink`: `on-orange` (Intro, mobile menu, home-screen icon grid, easyMusic's world) drops fill and padding because the orange surface already is the badge. The Family mark is an "easyApp" pill at logo size, vertically centred with the copy.
 - **Bricolage Grotesque** — `next/font/google`, variable (`opsz` 12–96, `wdth` 75–100, `wght` 200–800), subsets `latin` + `latin-ext`. Everything else. Display sizes use weight ~650 with optical sizing on.
 
 ### Color tokens (Tailwind v4 `@theme`)

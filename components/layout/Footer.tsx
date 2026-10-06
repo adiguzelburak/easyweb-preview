@@ -42,19 +42,14 @@ export function Footer() {
         </div>
 
         <div className="mt-20 flex flex-col gap-3 border-t border-paper/10 py-8 text-sm text-paper/50 sm:flex-row sm:justify-between">
-          <p>{footer.legal}</p>
+          <p>
+            <EasyText text={footer.legal} />
+          </p>
           <a href={company.familyUrl} target="_blank" rel="noreferrer" className="transition-colors hover:text-paper">
             <EasyText text={footer.family} />
           </a>
         </div>
       </div>
-
-      <p
-        aria-hidden
-        className="px-4 pb-6 text-center text-[15vw] leading-[0.8] whitespace-nowrap text-paper/[0.07] select-none easy-plain md:px-8"
-      >
-        <EasyText text={company.name} />
-      </p>
     </footer>
   );
 }

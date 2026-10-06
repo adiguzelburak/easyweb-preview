@@ -84,14 +84,14 @@ export const traction = {
     { value: 10, suffix: "M+", label: "Total downloads", context: "Across iOS and Android." },
     { value: 25, suffix: "+", label: "Apps published", context: "Shipped to the App Store and Google Play." },
     { value: 50, suffix: "+", label: "Markets served", context: "With localized store listings." },
-    { value: 6, label: "Flagship apps", context: "easyStars, easyMusic, Comikaze, GlobeAlert, GLPal and CarUp." },
+    { value: 6, label: "Flagship apps", context: "GlobeAlert, GLPal, Comikaze, easyStars, easyMusic and CarUp." },
   ] satisfies CountStat[],
 };
 
 export const family = {
   eyebrow: "The easy® family",
   title: "Part of the easy® family of brands.",
-  mark: "easy",
+  mark: "easyApp",
   body: "easyApp.io is the mobile app publisher of the easy® family, bringing the easy® name to apps used around the world.",
   link: { label: "Visit easy.com", href: familyUrl } satisfies Link,
   brands: [] as string[],
@@ -104,8 +104,7 @@ export const team = {
 
 export const closing = {
   eyebrow: "Contact",
-  title: "Let’s make it easy.",
-  lead: "For investment and partnership inquiries, write to us directly.",
+  title: "Let’s get in touch.",
   copy: "Copy email address",
   copied: "Email copied",
   mailApp: "Open in your mail app",

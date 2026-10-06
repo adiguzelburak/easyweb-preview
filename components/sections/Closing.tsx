@@ -53,7 +53,7 @@ export function Closing() {
       tabIndex={-1}
       aria-labelledby="contact-title"
       data-nav-theme="light"
-      className="relative isolate overflow-hidden bg-paper text-ink outline-none on-orange"
+      className="relative isolate overflow-hidden bg-paper text-ink outline-none"
     >
       <div data-closing-fill aria-hidden className="absolute inset-0 -z-10 bg-orange" />
 
@@ -64,7 +64,6 @@ export function Closing() {
             <EasyText text={closing.title} />
           </SplitReveal>
         </h2>
-        <p className="mt-8 max-w-md text-lg leading-relaxed md:text-xl">{closing.lead}</p>
 
         <div data-closing-cta className="relative mt-12">
           <MagneticButton

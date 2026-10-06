@@ -122,13 +122,6 @@
   --easy-pad: 0;
 }
 
-/* Ghosted text keeps the Cooper word but no pill. */
-@utility easy-plain {
-  --easy-fill: transparent;
-  --easy-pad: 0;
-  --easy-ink: currentColor;
-}
-
 /* Horizontal centre of the sticky showcase phone; keep in sync with lib/layout.ts. */
 @utility left-phone {
   left: calc(50% + min(50%, 40rem) - 2rem - min(17svh, 170px));

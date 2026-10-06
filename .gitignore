@@ -19,6 +19,8 @@
 
 # production
 /build
+/video
+/.next/
 
 # misc
 .DS_Store

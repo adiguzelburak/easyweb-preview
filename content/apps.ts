@@ -14,45 +14,6 @@ const storeShots = (name: string, count: number, extension: "jpg" | "png" | "web
 
 export const apps: App[] = [
   {
-    id: "easystars",
-    name: "easyStars",
-    category: "Astrology & Tarot",
-    tagline: "AI-powered birth charts, daily horoscopes and tarot readings — your personal astrologer.",
-    icon: "/apps/easystars/icon.png",
-    screenshots: storeShots("easystars", 9, "jpg"),
-    world: { background: "#1b1340", foreground: "#f6f1e9", accent: "#8b5cf6", theme: "dark" },
-    stores: {
-      appStore: "https://apps.apple.com/us/app/easystars-astrology-tarot/id6462723652",
-      googlePlay: "https://play.google.com/store/apps/details?id=co.stellarapp.stellar",
-    },
-  },
-  {
-    id: "easymusic",
-    name: "easyMusic",
-    category: "AI Music Studio",
-    tagline: "Turn any idea into a full song — AI vocals, covers and music videos in minutes.",
-    icon: "/apps/easymusic/icon.png",
-    screenshots: storeShots("easymusic", 5, "jpg"),
-    world: { background: brandOrange, foreground: "#16130f", accent: "#16130f", theme: "light" },
-    stores: {
-      appStore: "https://apps.apple.com/us/app/ai-song-generator-easymusic/id6773059145",
-      googlePlay: "https://play.google.com/store/apps/details?id=com.easyapp.easymusic",
-    },
-  },
-  {
-    id: "comikaze",
-    name: "Comikaze",
-    category: "Comic & Manga Maker",
-    tagline: "Turn your photos and stories into stunning comic strips and manga panels.",
-    icon: "/apps/comikaze/icon.png",
-    screenshots: storeShots("comikaze", 5, "jpg"),
-    world: { background: "#ffd83d", foreground: "#16130f", accent: "#e5322d", theme: "light" },
-    stores: {
-      appStore: "https://apps.apple.com/us/app/comic-maker-manga-comikaze/id6760800445",
-      googlePlay: "https://play.google.com/store/apps/details?id=com.appricott.comikaze",
-    },
-  },
-  {
     id: "globealert",
     name: "GlobeAlert",
     category: "Real-time World News",
@@ -113,6 +74,45 @@ export const apps: App[] = [
     stores: {
       appStore: "https://apps.apple.com/tr/app/glp-1-tracker-glpal/id6783449123",
       googlePlay: "https://play.google.com/store/apps/details?id=com.easyapp.glpal",
+    },
+  },
+  {
+    id: "comikaze",
+    name: "Comikaze",
+    category: "Comic & Manga Maker",
+    tagline: "Turn your photos and stories into stunning comic strips and manga panels.",
+    icon: "/apps/comikaze/icon.png",
+    screenshots: storeShots("comikaze", 5, "jpg"),
+    world: { background: "#ffd83d", foreground: "#16130f", accent: "#e5322d", theme: "light" },
+    stores: {
+      appStore: "https://apps.apple.com/us/app/comic-maker-manga-comikaze/id6760800445",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.appricott.comikaze",
+    },
+  },
+  {
+    id: "easystars",
+    name: "easyStars",
+    category: "Astrology & Tarot",
+    tagline: "AI-powered birth charts, daily horoscopes and tarot readings — your personal astrologer.",
+    icon: "/apps/easystars/icon.png",
+    screenshots: storeShots("easystars", 9, "jpg"),
+    world: { background: "#1b1340", foreground: "#f6f1e9", accent: "#8b5cf6", theme: "dark" },
+    stores: {
+      appStore: "https://apps.apple.com/us/app/easystars-astrology-tarot/id6462723652",
+      googlePlay: "https://play.google.com/store/apps/details?id=co.stellarapp.stellar",
+    },
+  },
+  {
+    id: "easymusic",
+    name: "easyMusic",
+    category: "AI Music Studio",
+    tagline: "Turn any idea into a full song — AI vocals, covers and music videos in minutes.",
+    icon: "/apps/easymusic/icon.png",
+    screenshots: storeShots("easymusic", 5, "jpg"),
+    world: { background: brandOrange, foreground: "#16130f", accent: "#16130f", theme: "light" },
+    stores: {
+      appStore: "https://apps.apple.com/us/app/ai-song-generator-easymusic/id6773059145",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.easyapp.easymusic",
     },
   },
   {

@@ -17,7 +17,7 @@ export function Family() {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-28 md:grid-cols-[1.1fr_1fr] md:px-8 md:py-40">
         <Reveal>
-          <p aria-hidden className="pb-[0.22em] text-[clamp(6rem,14.5vw,13.5rem)] leading-none">
+          <p aria-hidden className="text-[clamp(3.5rem,7.6vw,7rem)] leading-none">
             <EasyWord>{family.mark}</EasyWord>
           </p>
         </Reveal>

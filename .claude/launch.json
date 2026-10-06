@@ -20,6 +20,14 @@
       ],
       "port": 3100,
       "autoPort": true
+    },
+    {
+      "name": "film",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "video/serve.mjs"
+      ],
+      "port": 4321
     }
   ]
 }
